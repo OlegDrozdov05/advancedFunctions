@@ -25,12 +25,7 @@ console.log(gen.next().done)
 //3
 
 const map = function(arr, func) {
-    const result = []
-    for(el of arr) {
-        result.push(func(el))
-    }
-
-    return result;
+    return arr.map(func)
 }
 
 const intArr = [1,2,3,4,5]
@@ -66,10 +61,7 @@ console.log(arraySum([1,2,3,4]));
 //6
 
 (function (){
-    var x = []
-    for(let i = 0; i < 5; ++i) {
-        x.push(Math.floor(Math.random() * 10 + 1))
-    }
+    var x = Array.from(new Array(5), _ => Math.floor(Math.random() * 10 + 1))
     const min = Math.min(...x)
     const max = Math.max(...x)
   
